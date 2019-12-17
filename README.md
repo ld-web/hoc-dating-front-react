@@ -31,3 +31,14 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 //...
 ```
+
+On va ensuite ajouter les dépendances suivantes :
+
+`yarn add better-react-spinkit react-hook-form react-router-dom axios`
+
+|Nom|Description|
+|---|-----------|
+|better-react-spinkit|Permettra d'afficher des spinners à l'écran pour les temps d'attente|
+|react-hook-form|Gestion de formulaires|
+|react-router-dom|Gestion du routage vers les différents composants|
+|axios|Pour effectuer nos requêtes vers l'API|
