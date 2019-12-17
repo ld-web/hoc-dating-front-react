@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+UIkit.use(Icons);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
