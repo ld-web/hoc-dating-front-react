@@ -38,7 +38,7 @@ On va ensuite ajouter les dépendances suivantes :
 
 |Nom|Description|
 |---|-----------|
-|better-react-spinkit|Permettra d'afficher des spinners à l'écran pour les temps d'attente|
-|react-hook-form|Gestion de formulaires|
-|react-router-dom|Gestion du routage vers les différents composants|
-|axios|Pour effectuer nos requêtes vers l'API|
+|[better-react-spinkit](http://better-react-spinkit.benjamintatum.com/)|Permettra d'afficher des spinners à l'écran pour les temps d'attente|
+|[react-hook-form](https://react-hook-form.com/)|Gestion de formulaires|
+|[react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start)|Gestion du routage vers les différents composants|
+|[axios](https://github.com/axios/axios)|Pour effectuer nos requêtes vers l'API|
