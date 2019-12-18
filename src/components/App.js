@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Login from './Login';
+
 function App() {
   return (
-    <h1>Dating App</h1>
+    <Login />
   );
 }
 
