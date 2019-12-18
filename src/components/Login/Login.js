@@ -13,7 +13,7 @@ const Login = () => {
   const { register, errors, setError, handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = data => {
+  const connect = data => {
     setLoading(true);
 
     login(data.login, data.password)
@@ -23,7 +23,7 @@ const Login = () => {
 
         return response.json();
       })
-      .then(({ token, username }) => {
+      .then(({ token }) => {
         localStorage.setItem("front-user", token);
         setLoading(false);
       })
@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className="uk-container uk-container-expand uk-cover-container login">
       <img src={bg} alt="" uk-cover="true" />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(connect)}>
         <p className="uk-text-center">
           <img src={logo} alt="F2A Logo" />
         </p>
