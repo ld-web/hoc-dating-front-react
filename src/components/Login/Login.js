@@ -5,6 +5,7 @@ import { DoubleBounce } from "better-react-spinkit";
 import login from "../../utils/login-utils";
 import LoginErrors from './LoginErrors';
 import UserContext from "../../context/UserContext";
+import { tokenName } from '../../utils/constants.js';
 
 import logo from "../../images/logo.jpg";
 import bg from "../../images/login-bg.jpg";
@@ -28,13 +29,13 @@ const Login = () => {
         return response.json();
       })
       .then(({ token }) => {
-        localStorage.setItem("front-user", token);
-        user.setLogged(true);
+        localStorage.setItem(tokenName, token);
+        user.setIsLogged(true);
         setLoading(false);
       })
       .catch(e => {
         setLoading(false);
-        user.setLogged(true);
+        user.setIsLogged(false);
         setError("apiServer", "connection", "Une erreur est survenue");
       });
   };
