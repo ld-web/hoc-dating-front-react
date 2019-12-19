@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import useForm from "react-hook-form";
 import { DoubleBounce } from "better-react-spinkit";
 
 import login from "../../utils/login-utils";
 import LoginErrors from './LoginErrors';
+import UserContext from "../../context/UserContext";
 
 import logo from "../../images/logo.jpg";
 import bg from "../../images/login-bg.jpg";
@@ -12,6 +13,9 @@ import "./Login.scss";
 const Login = () => {
   const { register, errors, setError, handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
+
+  const user = useContext(UserContext);
+  console.log('UserContext in Login component', user);
 
   const connect = data => {
     setLoading(true);
@@ -25,10 +29,12 @@ const Login = () => {
       })
       .then(({ token }) => {
         localStorage.setItem("front-user", token);
+        user.setLogged(true);
         setLoading(false);
       })
       .catch(e => {
         setLoading(false);
+        user.setLogged(true);
         setError("apiServer", "connection", "Une erreur est survenue");
       });
   };
